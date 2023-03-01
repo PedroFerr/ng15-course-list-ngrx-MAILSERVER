@@ -3,6 +3,20 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
+
+// app.use(cors({ origin: '*' }));
+// const corsOpts = {
+//     origin: '*',
+//     methods: [
+//         'GET',
+//         'POST',
+//     ],
+//     allowedHeaders: [
+//         'Content-Type',
+//     ],
+// };
+// app.use(cors(corsOpts));
+
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
