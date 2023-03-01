@@ -1,12 +1,16 @@
 require('dotenv').config();
-
 const express = require('express');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
-app.use(cors({ origin: '*' }));
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 app.use(bodyParser.json());
 
 app.listen(3000, () => console.log('The server started on port 3000 !!!!!!'));
