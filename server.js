@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -20,7 +18,7 @@ const app = express();
 // app.use(cors(corsOpts));
 
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', ['https://ng15-ngrx.miles-net.com']);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Credentials', true);
