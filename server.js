@@ -17,12 +17,12 @@ const app = express();
 // };
 // app.use(cors(corsOpts));
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', ['https://ng15-ngrx.miles-net.com']);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
+    return next();
 });
 app.use(bodyParser.json());
 
